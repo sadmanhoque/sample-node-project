@@ -1,20 +1,21 @@
-# Use an official Node runtime as a parent image
-FROM node:12.7.0-alpine
 
-# Set the working directory to /app
-WORKDIR '/app'
+# Specify the base image
+FROM node:18-alpine
 
-# Copy package.json to the working directory
-COPY package.json .
+# Set the working directory
+WORKDIR /app
 
-# Install any needed packages specified in package.json
-RUN yarn
+# Copy package.json and package-lock.json to the working directory
+COPY package*.json .
 
-# Copying the rest of the code to the working directory
+# Install application dependencies
+RUN npm install
+
+# Copy the rest of the application files
 COPY . .
 
-# Make port 3000 available to the world outside this container
+#Specify the port to keep open
 EXPOSE 3000
 
-# Run index.js when the container launches
-CMD ["node", "index.js"]
+# Specify the command to run the application
+CMD ["npm", "start"]
