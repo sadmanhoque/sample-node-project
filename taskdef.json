@@ -3,7 +3,7 @@
     "containerDefinitions": [
         {
             "name": "my-first-task",
-            "image": "<IMAGE1_NAME>",
+            "image": "my-first-ecr-repo",
             "essential": true,
             "portMappings": [
                 {
