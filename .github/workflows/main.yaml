@@ -50,9 +50,4 @@ jobs:
           image: ${{ steps.build-image.outputs.image }}
 
       - name: Deploy Amazon ECS task definition
-        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
-        with:
-          task-definition: .aws/taskdef.json
-          service: my-first-service
-          cluster: my-cluster
-          wait-for-service-stability: true
+        run: aws ecs update-service --force-new-deployment --service my-first-service --cluster my-cluster

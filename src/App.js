@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { Component } from 'react';
+import Clock from './Components/Clock.js';
 
 function App() {
   return (
@@ -17,8 +19,9 @@ function App() {
         >
           Learn React
         </a>
+        <h4>15.223.22.110</h4>
+        <Clock timeZone="America/New_York"></Clock>
       </header>
-      <h4>3.96.29.169</h4>
     </div>
   );
 }
