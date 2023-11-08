@@ -11,14 +11,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Host IP</h1>
         <h4>15.223.22.110</h4>
         <Clock timeZone="America/New_York"></Clock>
       </header>
